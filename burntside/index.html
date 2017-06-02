@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Burntside - High-Speed approximate Steiner Tree generation</h3>
+<p>
+</p>
+
+<b>Source Code</b>
+<p>
+Latest - <a href="releases/burntside-0.2.0.tar.gz">burntside-0.2.0.tar.gz</a>
+<br>
+<a href="releases">Archive</a>
+</p>
+<p>
+Burntside is available under the 
+<a href="http://opensource.org/licenses/MIT">MIT license</a>.
+</p>
+
+<b>Building</b>
+<p>
+Building Burntside requires a C99 compiler supporting OpenMP specification 3.0 
+or greater (almost all of my testing is with GCC 4.7 and 4.8) and CMake. The
+<tt>configure</tt> script requires Bash, however it is possible to do the
+configuration by hand.
+
+To build Burntside with the default options, execute:
+</p>
+<p>
+<tt>
+./configure && make
+</tt>
+</p>
+<p>
+After it is built, the binary and the library will reside in
+<tt>./build/[system-arch]/bin</tt> and <tt>./build/[system-arch]/lib</tt>
+respectively (for most systems, <tt>[system-arch]</tt> will be
+<tt>Linux-x86_64</tt>, but depends on your OS/architecture). Burntside can
+the optionally be installed using <tt>make install</tt> (the default prefix is
+<tt>/usr/local</tt>, but can be changed with 
+<tt>configure --prefix="my_prefix"</tt>).
+</p>
+
+<b>Usage</b>
+<p>
+Burntside can then be used to cluster a graph as follows:
+</p>
+<p>
+<tt>
+burntside test.graph
+</tt>
+</p>
+<p>
+Most users will actually want the generated and not just runtime
+statistics, and should append the name of the output file.</p>
+<p>
+<tt>
+burntside test.stp test.sol
+</tt>
+</p>
+<p>
+The Burntside binary currently only supports the 
+<a href="http://steinlib.zib.de/format.php">Steinlib File Fromat</a> for input
+(.stp).
+</p>
+<p>
+Burntside currently has a large number of options, many of which are
+experimental. For a complete list, use the <tt>-h</tt> option:
+</p>
+<p>
+<tt>
+burntside -h
+</tt>
+</p>
+
+<b>Publications</b>
+<p>
+</p>
+
+<b>Contact</b>
+<p>You can contact me, Dominique LaSalle, at 
+<img src="../lastname.png" alt="my last name"/>
+<img src="../at.png" alt="(a)"/>
+<img src="../domain.png" alt="cs * umn"/>.edu</p>
+</p>
+
+
+
+</body>
+</html>

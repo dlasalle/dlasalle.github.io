@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Bowstring - Graph operation library</h3>
+<p>
+</p>
+
+<b>Source Code</b>
+<p>
+Latest - <a href="releases/bowstring-0.2.2.tar.gz">bowstring-0.2.2.tar.gz</a>
+<br>
+<a href="releases">Archive</a>
+</p>
+<p>
+Bowstring is available under the 
+<a href="http://opensource.org/licenses/MIT">MIT license</a>.
+</p>
+
+<b>Building</b>
+<p>
+Building Bowstring requires a C99 compiler supporting OpenMP specification 3.0 
+or greater (almost all of my testing is with GCC 4.7 and 4.8) and CMake. The
+<tt>configure</tt> script requires Bash, however it is possible to do the
+configuration by hand.
+
+To build Bowstring with the default options, execute:
+</p>
+<p>
+<tt>
+./configure && make
+</tt>
+</p>
+<p>
+After it is built, the binary and the library will reside in
+<tt>./build/[system-arch]/bin</tt> and <tt>./build/[system-arch]/lib</tt>
+respectively (for most systems, <tt>[system-arch]</tt> will be
+<tt>Linux-x86_64</tt>, but depends on your OS/architecture). Bowstring can
+the optionally be installed using <tt>make install</tt> (the default prefix is
+<tt>/usr/local</tt>, but can be changed with 
+<tt>configure --prefix="my_prefix"</tt>).
+</p>
+
+
+</body>
+</html>

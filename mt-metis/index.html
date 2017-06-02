@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Mt-Metis - Multi-threaded Graph Partitioning and Ordering</h3>
+<p>
+Mt-Metis is a multi-threaded multilevel graph partitioning and sparse matrix
+ordering tool based on the
+serial <a href="http://cs.umn.edu/~metis">Metis</a> graph partitioning tool.
+</p>
+
+<b>Source Code</b>
+<p>
+Latest - <a href="releases/mt-metis-0.6.0.tar.gz">mt-metis-0.6.0.tar.gz</a>
+<br>
+<a href="releases">Archive</a>
+</p>
+
+<b>Building</b>
+<p>
+Building mt-metis requires a C99 compiler supporting OpenMP specification 3.0 
+or greater (almost all of my testing is with GCC 4.6.3 through 5.1), a c++
+compiler supporting C++11, and CMake. The
+<tt>configure</tt> script requires Bash, however it is possible to do the
+configuration by hand.
+
+As of release 0.3.0, mt-metis uses the traditional unix style build scripts:
+</p>
+<p>
+<tt>./configure</tt>
+</p>
+<p>
+<tt>make</tt>
+</p>
+<p>
+<tt>make install</tt>
+</p>
+
+<b>Usage</b>
+<p>
+To partition a graph (into 16 parts), the simplest method is:
+</p>
+<p>
+<tt>./mtmetis 4elt.graph 16 4elt.part16</tt>
+</p>
+<p>
+This will give you the partition ID for each vertex in the file
+<tt>4elt.part16</tt>.
+</p>
+
+<img src="4elt.png"/>
+<img src="4elt.part16.png"/>
+
+
+<p>
+To order a structurally symmetric sparse matrix/graph via nested dissection:
+</p>
+<p>
+<tt>./mtmetis -pnd 4elt.graph 4elt.perm</tt>
+</p>
+
+<p>
+This will give you the new row/column ID for each row/column in the file
+<tt>4elt.perm</tt>.
+</p>
+
+<br/>
+
+<img src="4elt.png"/>
+<img src="4elt.nd.png"/>
+
+<br/>
+
+<p>
+There are a number of additional options, which can be viewed via:
+</p>
+<p>
+<tt>./mtmetis -h</tt>
+</p>
+
+<b>API</b>
+
+<p>
+The file <tt>mtmetis.h</tt> is the header that should be included
+by external programs wishing link to mt-Metis. As of release 0.5.0, the api
+functions now mimick that of Metis (e.g., <tt>MTMETIS_PartGraphKway()</tt>).
+</p>
+
+<p>
+Full documentation can be found <a href="api/">here</a>.
+</p>
+
+
+<b>Publications</b>
+
+
+<p>
+<a href="../publications/mtmetis2016hs.pdf">A parallel hill-climbing algorithm for graph partitioning</a>
+<pre>
+@inproceedings{mtmetis2016icpp,
+  title={A parallel hill-climbing algorithm for graph partitioning},
+  author={LaSalle, Dominique and Karypis, George},
+  booktitle={Parallel Processing (ICPP), 2016 45th International Conference on},
+  year={2016},
+  organization={IEEE}
+}
+</pre>
+</p>
+
+<p>
+<a href="../publications/mtmetis2015nd.pdf">Efficient Nested Dissection for Multicore Architectures</a>
+<pre>
+@incollection{mtmetis2015europar,
+  title={Efficient Nested Dissection for Multicore Architectures},
+  author={LaSalle, Dominique and Karypis, George},
+  pages{467--478},
+  booktitle={Euro-Par 2015: Parallel Processing},
+  year={2015},
+  publisher={Springer Berlin Heidelberg}
+}
+</pre>
+</p>
+
+
+
+<p>
+<a href="../publications/mtmetis2013ipdps.pdf">Multi-threaded Graph Partitioning</a>
+<pre>
+@inproceedings{mtmetis2013ipdps,
+  title={Multi-threaded graph partitioning},
+  author={LaSalle, Dominique and Karypis, George},
+  booktitle={Parallel \& Distributed Processing (IPDPS), 2013 IEEE 27th International Symposium on},
+  pages={225--236},
+  year={2013},
+  organization={IEEE}
+}
+</pre>
+</p>
+
+
+</body>
+</html>

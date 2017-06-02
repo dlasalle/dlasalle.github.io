@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Clairvoyance - Sparse graph/matrix visualization tool</h3>
+<p>
+</p>
+
+<b>Source Code</b>
+<p>
+Latest - <a href="releases/clairvoyance-0.1.3.tar.gz">clairvoyance-0.1.3.tar.gz</a>
+<br>
+<a href="releases">Archive</a>
+</p>
+<p>
+Clairvoyance is available under the 
+<a href="http://opensource.org/licenses/MIT">MIT license</a>.
+</p>
+
+<b>Building</b>
+<p>
+Building Clairvoyance requires a C99 compiler supporting OpenMP specification 3.0 
+or greater (almost all of my testing is with GCC 4.7 and 4.8) and CMake. The
+<tt>configure</tt> script requires Bash, however it is possible to do the
+configuration by hand.
+
+To build Clairvoyance with the default options, execute:
+</p>
+<p>
+<tt>
+./configure && make
+</tt>
+</p>
+<p>
+After it is built, the binary and the library will reside in
+<tt>./build/[system-arch]/bin</tt> and <tt>./build/[system-arch]/lib</tt>
+respectively (for most systems, <tt>[system-arch]</tt> will be
+<tt>Linux-x86_64</tt>, but depends on your OS/architecture). Clairvoyance can
+the optionally be installed using <tt>make install</tt> (the default prefix is
+<tt>/usr/local</tt>, but can be changed with 
+<tt>configure --prefix="my_prefix"</tt>).
+</p>
+
+<b>Usage</b>
+<p>
+Clairvoyance can then be used to generate an image of a graph/matrix as follows:
+</p>
+<p>
+<tt>
+clairvoyance test.graph test.png
+</tt>
+</p>
+<p>
+Clairvoyance currently has a large number of options, many of which are
+experimental. For a complete list, use the <tt>-h</tt> option:
+</p>
+<p>
+<tt>
+clairvoyance -h
+</tt>
+</p>
+
+<b>Contact</b>
+<p>You can contact me, Dominique LaSalle, at 
+<img src="../lastname.png" alt="my last name"/>
+<img src="../at.png" alt="(a)"/>
+<img src="../domain.png" alt="cs * umn"/>.edu</p>
+</p>
+
+
+
+</body>
+</html>

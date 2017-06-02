@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Nerstrand - Fast Multi-threaded Graph Clustering</h3>
+<p>
+Nerstrand is a multi-threaded multilevel graph clustering tool for generating
+clusterings with high modularity. It supports both finding a specified number
+of clusters/communities as well as detecting the number of
+clusters/communities.
+</p>
+
+<b>Source Code</b>
+<p>
+The latest can be found on
+<a href="https://github.com/dlasalle/nerstrand">GitHub</a>
+</p>
+
+<p>
+Older version can be
+<a href="releases">here</a>
+</p>
+
+<p>
+Nerstrand is available under the 
+<a href="http://opensource.org/licenses/MIT">MIT license</a>.
+</p>
+
+<b>Building</b>
+<p>
+Building Nerstrand requires a C99 compiler supporting OpenMP specification 3.0 
+or greater (almost all of my testing is with GCC) and CMake. The
+<tt>configure</tt> script requires Bash, however it is possible to do the
+configuration by hand.
+
+To build Nerstrand with the default options, execute:
+</p>
+<p>
+<tt>
+./configure && make
+</tt>
+</p>
+<p>
+After it is built, the binary and the library will reside in
+<tt>./build/[system-arch]/bin</tt> and <tt>./build/[system-arch]/lib</tt>
+respectively (for most systems, <tt>[system-arch]</tt> will be
+<tt>Linux-x86_64</tt>, but depends on your OS/architecture). Nerstrand can
+the optionally be installed using <tt>make install</tt> (the default prefix is
+<tt>/usr/local</tt>, but can be changed with 
+<tt>configure --prefix="my_prefix"</tt>).
+</p>
+
+<b>Usage</b>
+<p>
+Nerstrand can then be used to cluster a graph as follows:
+</p>
+<p>
+<tt>
+nerstrand test.graph
+</tt>
+</p>
+<p>
+Most users will actually want the cluster assignment and not just runtime
+statistics, and should append the name of the output file.</p>
+<p>
+<tt>
+nerstrand test.graph test.cluster
+</tt>
+</p>
+<p>
+The Nerstrand binary currently only supports the 
+<a href="glaros.dtc.umn.edu/gkhome/fetch/sw/metis/manual.pdf">Metis Graph
+Format</a> for input.
+</p>
+<p>
+Nerstrand currently has a large number of options, many of which are
+experimental. For a complete list, use the <tt>-h</tt> option:
+</p>
+<p>
+<tt>
+nerstrand -h
+</tt>
+</p>
+
+<b>Publications</b>
+<p>
+<a href="../publications/nerstrand-journal-r3.pdf">
+Multi-threaded Modularity Based Graph Clustering using the Multilevel Paradigm
+</a>
+<pre>
+@article{lasalle2014nerstrand,
+  title={Multi-threaded Modularity Based Graph Clustering using the Multilevel Paradigm},
+  journal = "Journal of Parallel and Distributed Computing ",
+  year = "2014",
+  issn = "0743-7315",
+  doi = "http://dx.doi.org/10.1016/j.jpdc.2014.09.012",
+  url = "http://www.sciencedirect.com/science/article/pii/S0743731514001750",
+  author = "Dominique LaSalle and George Karypis"
+}
+</pre>
+</p>
+
+
+<b>The Nerstrand Library API</b>
+
+<p>
+Nerstrand provides an interface so that other programs can directly call
+Nerstrand. Please see the <a href="api">API</a> for details.
+</p>
+
+
+
+</body>
+</html>
